@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Forms Page</title>
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+
+<body>
+	<header>
+		<!--Use Flexbox to create the navigation bar-->
+		<div class="flexbox-container">
+			<div class="box-1">
+				<img src="MEDIA/global.png" alt="Logo"/>		
+			</div>	
+				
+			<div class="box-2">
+				<p class="tagline">ITWD6.408 </p>
+			</div>
+			
+			<div class="box-3">
+				<div class="horizontal-nav">
+					<ul>
+						<li><a href="index.html">HOME</a></li>
+						<li class="active"><a href="forms.html">FORMS</a></li>
+						<li><a href="xml-rss.html">XML/RSS</a></li>
+						<li><a href="js-demo.html">JAVASCRIPT</a></li>
+						<li><a href="my-research.html">RESEARCH</a></li>	
+					</ul>
+				</div>			
+			</div>			
+			<div class="box-4">
+				<p onclick="openNav()">≡</p>
+			</div>				
+		</div>	
+
+		<!--Curtain menu: collapse this menu as default when loading the page-->
+		<nav id="curtain-nav">
+			<!--Add a close button (X) hyperlink on the top left corner-->
+			<a href="javascript:void(0)" class="nav-close-button" onclick="closeNav()">❌</a>
+			<div class="curtain-nav-content">
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li class="active"><a href="forms.html">FORMS</a></li>
+					<li><a href="xml-rss.html">XML/RSS</a></li>
+					<li><a href="js-demo.html">JAVASCRIPT</a></li>
+					<li><a href="my-research.html">RESEARCH</a></li>	
+				</ul>
+			</div>
+		</nav>
+	</header>
+	
+	<!---------------------------------------------------->	
+	<div class="container-fluid">
+		<div class="row">
+			<!--Button section-->
+			<div class="col-12 col-md-2">
+				<div class="container-fluid">
+					<div class="row justify-content-around">
+						<!--Button 1-->						
+						<button class="col-6 col-md-12 btn btn-primary m-1 bg-warning" type="button" 
+								data-bs-toggle="collapse" data-bs-target="#button1" 
+								aria-expanded="false" aria-controls="button1">HTML FORM</button>
+						<!--Button 2-->
+						<button class="col-6 col-md-12 btn btn-primary m-1" type="button" 
+								data-bs-toggle="collapse" data-bs-target="#button2" 
+								aria-expanded="false" aria-controls="button2">GOOGLE FORM</button>	 					
+					</div>			
+				</div>			
+			</div>
+			
+			<!---------------------------------------------------->	
+			<!--Main content section-->
+			<div class="col-12 col-md-10">
+				<div class="row">
+				  <div class="col-12">
+					<!--Content area 1 for button 1-->
+					<div class="collapse show multi-collapse" id="button1">
+					  <div class="card card-body">HTML FORM HERE<br>
+					  
+						<form name="survey" action="https://danieldangs.com/itwd6408/handle_survey.php"
+							  method="post" enctype="text/plain">
+							  
+							  <!--First Name-->
+						  <div class="row mb-3">
+							<label for="fname" class="col-sm-2 col-form-label">First Name:</label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control" id="fname" name="fname" required>
+							</div>
+						  </div>
+							<!--Last Name-->
+						  <div class="row mb-3">
+							<label for="lname" class="col-sm-2 col-form-label">Last Name:</label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control" id="lname" name="lname" required>
+							</div>
+						  </div>
+							<!--Address-->
+							<legend class="col-form-label fw-bolder fs-3 col-sm-2 pt-0">Address</legend>
+						  <div class="row mb-3">
+							<label for="addressline1" class="col-sm-2 col-form-label">line 1:</label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control" id="addressline1" name="addressline1" placeholder="Address line 1" required>
+							</div>
+						  </div>
+						  <div class="row mb-3">
+							<label for="addressline2" class="col-sm-2 col-form-label">line 2:</label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control" id="addressline2" name="addressline2" placeholder="Address line 2">
+							</div>
+						  </div>
+						  <div class="row mb-3">
+							<label for="addresstown" class="col-sm-2 col-form-label">Town/city:</label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control" id="addresstown" name="addresstown" placeholder="Town/city" required>
+							</div>
+						  </div>
+							<!--Gender-->
+						  <fieldset class="row mb-3">
+							<legend class="col-form-label col-sm-2 pt-0">Gender:</legend>
+							<div class="col-sm-10">
+							  <div class="form-check">
+								<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked required>
+								<label class="form-check-label" for="gridRadios1">
+								  Male
+								</label>
+							  </div>
+							  <div class="form-check">
+								<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+								<label class="form-check-label" for="gridRadios2">
+								  Female
+								</label>
+							  </div>
+							  <div class="form-check disabled">
+								<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+								<label class="form-check-label" for="gridRadios3">
+								  Other
+								</label>
+							  </div>
+							</div>
+						  </fieldset>
+							<!--Mobile Phone Type-->
+						  <div class="row mb-3">
+						  <legend class="col-form-label col-sm-2 pt-0">Mobile Phone Type:</legend>
+							<div class="col-sm-10 offset-sm-2">
+							  <div class="form-check">
+								<input class="form-check-input" type="checkbox" id="gridCheckWindows" required>
+								<label class="form-check-label" for="gridCheck1">
+								  Windows
+								</label>
+							  </div>
+							  <div class="form-check">
+								<input class="form-check-input" type="checkbox" id="gridCheckApple">
+								<label class="form-check-label" for="gridCheck1">
+								  Apple
+								</label>
+							  </div>
+							  <div class="form-check">
+								<input class="form-check-input" type="checkbox" id="gridCheckAndroid">
+								<label class="form-check-label" for="gridCheck1">
+								  Android
+								</label>
+							  </div>
+							  <div class="form-check">
+								<input class="form-check-input" type="checkbox" id="gridCheckOther">
+								<label class="form-check-label" for="gridCheck1">
+								  Other
+								</label>
+							  </div>
+							</div>
+						  </div>	  
+						<!--Mobile Phone Provider-->					  
+						<div class="row mb-3">
+							<label for="inputProvider" class="col-sm-2 col-form-label">Mobile Provider:</label>
+							<div class="col-sm-10">
+							  <select id="inputProvider" class="form-select" required>
+								  <option>None</option>
+								  <option>Spark</option>
+								  <option>Vodafone</option>
+								  <option>Now</option>
+								  <option>Other</option>
+							  </select>
+							</div>
+						</div>
+						<!--Phone usage paragraph-->
+						<div class="input-group row mb-3">
+						  <label for="phoneUsage" class="col-sm-2 col-form-label">Do you use your phone for study? Please explain:</label>
+						  <textarea class="form-control" aria-label="With textarea" required></textarea>
+						</div>						
+						<!--Submit and Reset-->
+						  <div class="hstack gap-3 justify-content-md-end">
+							  <button type="submit" class="btn btn-primary">Submit</button>
+							  <div class="vr"></div>
+							  <button type="button" class="btn btn-outline-danger">Reset</button>
+						  </div>
+						</form>						
+					  </div>
+					</div>
+				  </div>
+				  
+				  <!---------------------------------------------------->	
+				  <!--Content area for button 2-->
+				  <div class="col-12">
+					<div class="collapse multi-collapse" id="button2">
+					  <div class="card card-body">GOOGLE FORM HERE<br>
+						<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfawGOQBQy99zWEFrX8Fg3rThXiTpBAntAvLy9jOdrW7B88Gw/viewform?embedded=true" width="auto" height="1529" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+					  </div>
+					</div>
+				  </div>
+				</div>				
+			</div>		
+		</div>
+	</div>
+	
+	<!---------------------------------------------------->	
+	<!--Footer section-->
+	<footer>
+		<div> Created by: Bonnie Joe <br />
+			Contact me at: <a href="mailto:joeb1@student.eit.ac.nz">joeb1@student.eit.ac.nz</a>
+		</div>
+	</footer>
+		
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>	
+	
+	<!--Embed the js file at the bottom of the html file-->
+	<script type="text/javascript" src="JS/javascript.js">
+	</script>
+	
+</body>
+
+</html>

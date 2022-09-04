@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Demo</title>
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+
+<body>
+	<header>
+		<!--Use Flexbox to create the navigation bar-->
+		<div class="flexbox-container">
+			<div class="box-1">
+				<img src="MEDIA/global.png" alt="Logo"/>		
+			</div>	
+				
+			<div class="box-2">
+				<p class="tagline">ITWD6.408 </p>
+			</div>
+			
+			<div class="box-3">
+				<div class="horizontal-nav">
+					<ul>
+						<li><a href="index.html">HOME</a></li>
+						<li><a href="forms.html">FORMS</a></li>
+						<li><a href="xml-rss.html">XML/RSS</a></li>
+						<li class="active"><a href="js-demo.html">JAVASCRIPT</a></li>
+						<li><a href="my-research.html">RESEARCH</a></li>	
+					</ul>
+				</div>			
+			</div>			
+			<div class="box-4">
+				<p onclick="openNav()">≡</p>
+			</div>				
+		</div>	
+
+		<!--Curtain menu: collapse this menu as default when loading the page-->
+		<nav id="curtain-nav">
+			<!--Add a close button (X) hyperlink on the top left corner-->
+			<a href="javascript:void(0)" class="nav-close-button" onclick="closeNav()">❌</a>
+			<div class="curtain-nav-content">
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="forms.html">FORMS</a></li>
+					<li><a href="xml-rss.html">XML/RSS</a></li>
+					<li class="active"><a href="js-demo.html">JAVASCRIPT</a></li>
+					<li><a href="my-research.html">RESEARCH</a></li>	
+				</ul>
+			</div>
+		</nav>
+	</header>
+	
+	<!---------------------------------------------------->	
+	<div class="col-12 col-md-12 container-fluid">
+		<div class="row">
+						
+			<!--Button section-->
+			<div class="col-12 col-md-2">
+				<div class="container-fluid">
+					<div class="row justify-content-around">
+						<!--Button 1-->						
+						<button class="col-6 col-md-12 btn btn-primary m-1 bg-warning" type="button" 
+								data-bs-toggle="collapse" data-bs-target="#button1" 
+								aria-expanded="false" aria-controls="button1">Demo 1: Slideshows</button>
+						<!--Button 2-->
+						<button class="col-6 col-md-12 btn btn-primary m-1 bg-warning" type="button" 
+								data-bs-toggle="collapse" data-bs-target="#button2" 
+								aria-expanded="false" aria-controls="button2">Demo 2: Webpage Customization</button>
+						<!--Button 3-->
+						<button class="col-6 col-md-12 btn btn-primary m-1 bg-warning" type="button" 
+								data-bs-toggle="collapse" data-bs-target="#button3" 
+								aria-expanded="false" aria-controls="button3">Demo 3: Add Comment</button>	
+						<!--Button 4-->
+						<button class="col-6 col-md-12 btn btn-primary m-1 bg-warning" type="button" 
+								data-bs-toggle="collapse" data-bs-target="#button4" 
+								aria-expanded="false" aria-controls="button4">Demo 4: Vote a Product</button>	 					
+					</div>			
+				</div>			
+			</div>
+			
+			<!---------------------------------------------------->
+			<!--Main content section-->
+			<div class="col-12 col-md-10">
+				<div class="row">
+				  <div class="col-12">
+			
+			<!---------------------------------------------------->
+			<!--Content for Demo 1: Slideshows-->
+						<section class="collapse show mutli-collapse" id="button1">
+							<div class="card card-body">
+							<h3>Purpose:</h3>
+							<p>Each slide has a title, image, short description. <br>
+							There are two buttons: PREVIOUS & NEXT on manual slideshow.</p>
+							
+							<!--Automatic Slideshow-->
+								<div  class="container fluid">
+								<div class="row">
+									<div class="col-12 border border-secondary m-1 p-3">
+										<h3 class="text-center">Automatic Slideshow</h3>
+										<h4 class="text-center" id="auto-slide-title">Tablet: IPad</h4></h4>
+										<img class="rounded mx-auto d-block" id="auto-slide-image" src="MEDIA/ipad.png" height="200px" alt="Tablet">
+										<p class="text-center" id="auto-slide-description">Apple iPad 10.2" (9th Gen) 64GB Wi-Fi - (Silver) - A13 Bionic chip with Neural Engine</p>
+									</div>
+									
+							<!--Manual Slideshow-->	
+								<div class="col-12 border border-secondary m-1 p-3">
+									<h3 class="text-center">Manual Slideshow</h3>
+									<h4 class="text-center" id="manual-slide-title">Tablet: IPad</h4></h4>
+										<div class="row">
+											<div class="col-2 justify-content-start">
+												<button type="button" class="btn btn-success" onclick="previousTablet()">Previous</button>
+											</div>
+											<div class="col-8 justify-content-center">
+												<img class="mx-auto d-block img-fluid" id="manual-slide-image" src="MEDIA/ipad.png" alt="Tablet">
+											</div>
+											<div class="col-2 justify-content-end">
+												<button type="button" class="btn btn-success" onclick="nextTablet()">Next</button>
+											</div>
+										</div>
+									<p class="text-center" id="manual-slide-description">Apple iPad 10.2" (9th Gen) 64GB Wi-Fi - (Silver) - A13 Bionic chip with Neural Engine</p>
+								</div>
+								</div>
+								</div>
+							</div>
+						</section>
+						
+			<!---------------------------------------------------->			
+			<!--Content area for Demo 2: Webpage Customization-->
+				  <section class="col-12">
+					<div class="collapse multi-collapse" id="button2">
+					  <div class="card card-body">
+							<h2>Webpage Customization</h2>
+							<h4>Change the background color and font size</h4>
+							<div  class="container fluid">
+								<div class="row">
+									<!--Change font size-->
+									<div class="col-12 col-lg-6 border border-secondary p-2">
+										<h5>Customize text</h5>
+										<label>Select text size:</label>
+										<select class="col-12 col-md-6" id="text-size" onchange="customizeText()">
+										</select>
+									</div>
+									<!--Change background colour-->
+									<div class="col-12 col-lg-6 border border-secondary p-2">
+										<h5>Customize Background</h5>
+										<label>Select background color:</label>
+										<select class="col-12 col-md-6" id="selected-backgroundcolor" onchange="customizeBackground()">
+										</select>
+										
+									</div>
+									<!--Sample text-->
+									<div class="col-12 border border-secondary p-2" id="customizeSample">
+										<p class="text-center">
+										<b>Tablet: IPad</b>
+										<img class="rounded mx-auto d-block" src="MEDIA/ipad.png" height="200px" alt="Tablet"><br>
+										Apple iPad 10.2" (9th Gen) 64GB Wi-Fi - (Silver) - A13 Bionic chip with Neural Engine</p>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				  </section>
+			
+			<!---------------------------------------------------->
+			<!--Content area for Demo 3: Add Comment-->
+				  <section class="col-12">
+					<div class="collapse multi-collapse" id="button3">
+					  <div class="card card-body">
+					  <h3>Add a Comment:</h3>
+					  <!--Display item-->
+						<div class="col-12 border border-secondary">
+							<h4 class="text-center">Tablet: IPad</h4></h4>
+							<img class="rounded mx-auto d-block" src="MEDIA/ipad.png" height="200px" alt="Tablet">
+							<p class="text-center">Apple iPad 10.2" (9th Gen) 64GB Wi-Fi - (Silver) - A13 Bionic chip with Neural Engine</p>
+						</div>
+						<!--Display previous comments-->
+						<div class="col-12 border border-secondary p-2">
+							<h5>Comments: </h5>
+							<div id="comment-list"></div>
+						</div>
+						<!--Add Comment-->
+						<div class="col-12 border border-secondary p-2" id="commentText">
+							<h5>Add your comment: </h5>
+							<label>Name: </label>
+							<input type="text" id="comment_name" placeholder="Your name" size="auto"/>
+							<br>
+							<label>Comment: </label><br>
+							<textarea id="comment_text" rows="10" cols="40"></textarea>
+							<br>
+							<button onclick="addComment()">POST</button>
+						</div>
+						</div>
+					</div>
+				  </section>
+			
+			<!---------------------------------------------------->			
+			<!--Content area for Demo 4: Vote (like/dislike) a Product-->
+				  <section class="col-12">
+					<div class="collapse multi-collapse" id="button4">
+					  <div class="card card-body border border-secondary">
+							<h2>Vote (Like/Dislike) a Product</h2>
+							<h4 class="text-center">Tablet: IPad</h4></h4>
+							<img class="rounded mx-auto d-block" src="MEDIA/ipad.png" height="200px" alt="Tablet">
+							<p class="text-center">Apple iPad 10.2" (9th Gen) 64GB Wi-Fi - (Silver) - A13 Bionic chip with Neural Engine</p>
+							<br>
+							<div class="col mx-auto">
+								<!--Like button-->
+								<p id="likeNumber" style="display: inline-block;">0</p>
+								<button type="button" class="btn btn-outline-success btn-lg" id="likeButton" onclick="like()">&#128077;</button>
+								<div class="vr"></div>
+								<!--Dislike button-->
+								<button type="button" class="btn btn-outline-danger btn-lg" id="dislikeButton" onclick="dislike()">&#128078;</button>
+								<p id="dislikeNumber" style="display: inline-block;">0</p>
+							</div>
+						</div>
+					</div>
+				  </section>
+				  
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>	
+	
+	<!---------------------------------------------------->	
+	<!--Footer section-->
+	<footer>
+		<div> Created by: Bonnie Joe <br />
+			Contact me at: <a href="mailto:joeb1@student.eit.ac.nz">joeb1@student.eit.ac.nz</a>
+		</div>
+	</footer>
+	
+	<!--Embed the js file at the bottom of the html file-->
+	<script type="text/javascript" src="JS/javascript.js">
+	</script>
+	<script>
+		autoSlideshow(); <!--Play automatic slide show-->
+		loadColors(); <!--Load colors options to Webpage Customization-->
+		loadFontSize(); <!--Load font-sizes options to Webpage Customization-->
+		loadComments(); <!--Load comments to Add a comment-->
+	</script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+
+</html>

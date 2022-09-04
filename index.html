@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<!------------------------------HEAD------------------------------------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+
+<!------------------------------BODY------------------------------------------------>
+<body>
+	<!---------------------------------------------------->	
+	<header>
+		<!--Use Flexbox to create the navigation bar-->
+		<div class="flexbox-container">
+			<div class="box-1">
+				<img src="MEDIA/global.png" alt="Logo"/>		
+			</div>	
+				
+			<div class="box-2">
+				<p class="tagline">ITWD6.408 </p>
+			</div>
+			
+			<div class="box-3">
+				<div class="horizontal-nav">
+					<ul>
+						<li class="active"><a href="index.html">HOME</a></li>
+						<li><a href="forms.html">FORMS</a></li>
+						<li><a href="xml-rss.html">XML/RSS</a></li>
+						<li><a href="js-demo.html">JAVASCRIPT</a></li>
+						<li><a href="my-research.html">RESEARCH</a></li>	
+					</ul>
+				</div>			
+			</div>			
+			<div class="box-4">
+				<p onclick="openNav()">≡</p>
+			</div>				
+		</div>	
+
+		<!--Curtain menu: collapse this menu as default when loading the page-->
+		<nav id="curtain-nav">
+			<!--Add a close button (X) hyperlink on the top left corner-->
+			<a href="javascript:void(0)" class="nav-close-button" onclick="closeNav()">❌</a>
+			<div class="curtain-nav-content">
+				<ul>
+					<li class="active"><a href="index.html">HOME</a></li>
+					<li><a href="forms.html">FORMS</a></li>
+					<li><a href="xml-rss.html">XML/RSS</a></li>
+					<li><a href="js-demo.html">JAVASCRIPT</a></li>
+					<li><a href="my-research.html">RESEARCH</a></li>	
+				</ul>
+			</div>
+		</nav>
+	</header>
+	
+	<!---------------------------------------------------->	
+	<!--Main content section-->
+	<main>
+		
+		<section class="showcase">
+			<div class="showcase-image"></div>
+			
+			<div class="showcase-text">
+				<p>Advanced Internet and Web Learning Portfolio</p>
+				<h1>I am Bonnie Joe</h1>
+				<p>And I'm a Web Developer</p>
+			</div>
+		</section>
+		
+		<!---------------------------------------------------->	
+		<!--Section 1: Bio-->
+		<section class="bio">
+			<div class="title">Bio</div>
+			<div class="bio-image">
+				<img src="MEDIA/bio.jpg" alt="Bio picture" />
+			</div>
+			<div class="bio-text">
+				<p>
+					My personal interests include collecting fragrances and most recently taekwondo. 
+					I am also fond of going out for walks, hikes, and bike rides.
+				</p><br>
+				<p>
+					I am a student at EIT, studing a Bachelor of Computer Systems. 
+					The subject areas I enjoy are database and programing.
+					The reason I took Advanced Internet and Web to develop my understanding of back-end development.
+					And hopefully further my perception of how technologies and programs work behind the scenes.
+				</p>
+			</div>
+		</section>
+		
+		<!---------------------------------------------------->
+		<!--Section 1: Web Techno-->
+		<section class="webtechno">
+		<div class="title">Web Techno Section</div>
+		<h4><i>My Top 5 Web Technologies</i></h4>
+		<div class="webtechno-list">
+			<ol>
+				<li><b>Google:</b> Used to research topics.</li>
+				<li><b>GitHub:</b> A platform for hosting websites and version control.</li>
+				<li><b>Notepad++:</b> Text editor for many types of code.</li>
+				<li><b>Google Drive:</b> Cloud based storage from Google.</li>
+				<li><b>Draw.io:</b> Drawing tools used to make diagrams online.</li>
+			</ol>
+		</div>
+		</section>
+		
+		<!---------------------------------------------------->	
+		<!--Section 1: Technical Competence-->
+		<section class="compentences"> 
+		<div class="title">Technical Competence Section</div>
+		
+		<!--HTML5 Flip box-->
+		<div class="flip-container">
+			<div class="flip-box">
+				<div class="flip-box-inner">
+					<div class="flip-box-front">
+						<h4>HTML5<br>Mark-Up</h4>
+						<img src="MEDIA/html5.png" alt="HTML5 Image"/>
+					</div>
+					<div class="flip-box-back">
+						<p>
+						Competency:<br>
+						Intermediate
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--CSS Flip box-->
+		<div class="flip-container">
+			<div class="flip-box">
+				<div class="flip-box-inner">
+					<div class="flip-box-front">
+						<h4>CSS3<br>Styling</h4>
+						<img src="MEDIA/css3.png" alt="CSS3 Image"/>
+					</div>
+					<div class="flip-box-back">
+						<p>
+						Competency:<br>
+						Intermediate
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--JS Flip box-->
+		<div class="flip-container">
+			<div class="flip-box">
+				<div class="flip-box-inner">
+					<div class="flip-box-front">
+						<h4>JavaScript<br>Interactivity</h4>
+						<img src="MEDIA/javascript.png" alt="JAVASCRIPT Image"/>
+					</div>
+					<div class="flip-box-back">
+						<p>
+						Competency:<br>
+						Beginner
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>		
+		
+		</section>
+		
+		<!---------------------------------------------------->	
+		<!--Section 1: Authenticity-->
+		<section class="statement"> 
+			<div class="title">Statement of Authenticity</div>
+			<p>I confirm that:</p>
+			<p>This is an original assessment and is entirely my own work</p>
+			<p>It contains no material previously published or written by another person or myself except where due acknowledgement
+				is made in the text.</p>
+			<p>No material which to a substantial extent, has been submitted for any other academic course, is
+				included without acknowledgement.”</p>
+		</section>
+		
+	</main>
+	
+	<!---------------------------------------------------->	
+	<!--Footer section-->
+	<footer>
+		<div> Created by: Bonnie Joe <br />
+			Contact me at: <a href="mailto:joeb1@student.eit.ac.nz">joeb1@student.eit.ac.nz</a>
+		</div>
+	</footer>
+	
+	<!--Embed the js file at the bottom of the html file-->
+	<script type="text/javascript" src="JS/javascript.js">
+	</script>
+
+</body>
+</html>
+
