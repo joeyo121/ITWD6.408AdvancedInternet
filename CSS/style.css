@@ -1,0 +1,525 @@
+/*-------------------------------------------------*/
+/* MOBILE FIRST APPROACH
+   All the below CSS styles are valid for Mobile (small) devices
+   Link: https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+  
+   CSS Relative Unit
+   Link: https://www.w3schools.com/cssref/css_units.asp
+         https://css-tricks.com/css-font-size/
+         https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+*/
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #f4f4f4;	
+	font-family: "open-sans", sans-serif;
+	font-style: normal;
+	font-size: 16px;/*Set the baseline font size for the whole website*/
+}
+
+/*Footer Area*/
+footer {
+	height: 10vh;
+	background-color: #DAF7A6;
+	text-align: center;
+	
+	/*Centering both vertical and horizontal*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/*Header Area*/
+/*---------------------------------*/
+/*CSS flexbox: 1D Card Layout
+  Link 1: https://codelikethis.com/lessons/responsive-layout/flexbox-layout 
+  Link 2: https://medium.com/@merveyuksek/webpage-layout-examples-with-flexbox-88287f010a08
+*/
+.flexbox-container {
+	/*flexbox container*/
+	display: flex;
+	flex-direction: row;/*display on a row => horizontally*/  
+	
+	background-color: #DAF7A6;
+	min-height: 15vh;
+}
+
+.box-1 {
+	flex: 0; /*wrap the content*/
+}	
+
+.box-2 {
+	flex: 1;
+	
+	/*Centering both vertical and horizontal*/
+	display: flex;
+	font-size: 1.5em;
+	justify-content: left;
+	align-items: center;
+}
+  
+.box-3 {
+    flex: 4; /*horizontal nav on desktop*/
+	
+	/*Centering the content both vertical and horizontal*/
+	display: flex;
+	justify-content: center;
+	align-items: center;		
+}
+
+.box-4 {
+    flex: 1;/*Curtain menu*/
+	
+	font-size: 4.0em;
+	color: blue;
+	cursor: pointer;
+	text-align: right;
+	padding-right: 0.5em;
+}
+
+
+/*horizontal nav*/
+.horizontal-nav {
+	display: none; /*Hide on mobile devices*/
+}
+   
+/*Curtain menu*/
+nav {
+	padding: 10px 10px 10px 10px;/*10px 10px 10px 10px*/
+	overflow: visible;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+}
+
+nav ul li {
+	display: block;
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.2em;
+	text-transform: uppercase;
+}
+
+nav ul li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;	
+}
+
+nav ul li ul li {
+	background: #555; 
+	display: block; 
+	font-size: 1em;
+}
+
+nav ul li ul li a {
+	display: block; 
+	text-align: left;
+
+}
+
+nav ul li.dropdown:hover ul {
+	display: block;
+}
+
+
+#curtain-nav {
+	height: 70%;/*100%*/
+	width: 0;/*Hide it as default when loading page*/
+	padding: 0;
+	position: fixed;
+	z-index: 3;
+	top: 0; 
+	right: 0;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0, 0.9);
+	overflow-x: hidden;
+	transition: 0.5s;	
+}
+
+.curtain-nav-content {
+	/*For curtain menu*/
+	position: relative;
+	top: 15%;
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;	
+	overflow: visible;
+}
+
+.nav-close-button {
+	position: absolute;
+	top: 20px;
+	right: 45px;
+	font-size: 2.0em;
+	color: white;
+	text-decoration: none;
+}
+
+/*Set hover effect for items in the menu*/
+.active {
+	background-color: #FF9633;
+}
+
+.horizontal-nav li:hover:not(.active), .curtain-nav-content li:hover:not(.active) {
+	background-color: green;
+}
+
+/*Define style for the main area*/
+/*Main area*/
+main {
+	min-height: 85vh;
+	background-color: gray;
+	
+	/*use CSS grid*/
+	display: grid;
+	grid-template-areas: "area-1"
+						"area-2"
+						"area-3"
+						"area-4"
+						"area-5";
+}
+
+.showcase {
+	grid-area: area-1;
+	height: 30vh;
+	background-color: gray;
+}
+
+.showcase-image {
+	/*Image used*/
+	background-image: url("../MEDIA/ramen.jpg");
+	
+	height: 100%;
+	width: 100%;
+	margin: 1px;
+	filter: blur(3px);
+	-webkit-filter: blur(2px);
+	
+	/*Background position*/
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.showcase-text {
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+	color: white;
+	font-weight: bold;
+	border: 3px solid #f1f1f1;
+	position: absolute;
+	top: 28%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	width: 80%;
+	padding: 10px;
+	text-align: center;
+}
+
+/*Use for all section titles*/
+.title {
+	display: block;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+.bio {
+	grid-area: area-2;
+	min-height: 20vh;
+	background-color: #F1C40F;
+	padding: 15px;
+	
+	/*Grid display for layout*/
+	display: grid;
+	grid-template-areas: "bio-1"
+						"bio-2"
+}
+
+.bio-image {
+	grid-area: "bio-1";
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.bio-image img {
+	border: 2px solid white;
+	border-radius: 50%;
+	margin: 1vh;
+}
+
+.bio-text {
+	grid-area: "bio-2";
+}
+
+/*Web technology Section*/
+.webtechno {
+	grid-area: area-3;
+	min-height: 15vh;
+	background-color: #EC7063;
+	padding: 15px;
+}
+
+.webtechno-list {
+	padding: 0.5rem 2.0rem;
+}
+
+/*Web compentences*/
+.compentences {
+	grid-area: area-4;
+	min-height: 20vh;
+	background-color: #DAF7A6;
+}
+
+/*Container for flip boxes in the home page*/
+.flip-container {
+	flex-direction: column;
+	display: block;
+	flex: 1;
+	/*padding: 10px;*/
+	margin: 5px;
+	width: auto;
+	background-color: #50E0E7;
+}
+
+.flip-box {
+	height: 180px;
+	width: auto;
+	border: 1px solid green;
+	perspective: 1000px;
+}
+
+.flip-box-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+.flip-box-front h4 {
+	display: inline-block;
+	flex-direction: colum;
+	flex: 2;
+	text-align: center;
+	font-size: 1.8rem;
+}
+
+.flip-box-front img {
+	height: 20vh;
+	width: auto;
+	margin: 10px;
+	
+	display: inline-block;
+	flex-direction: row;
+	align-items: right;
+	
+	border-radius: 50%;
+	border: 2px solid green;
+}
+
+.flip-box:hover .flip-box-inner {
+	transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.flip-box-front {
+	background-color: #50E0E7;
+	color: black;
+}
+
+.flip-box-back {
+	background-color: #50E0E7;
+	color: black;
+	font-weight: bold;
+	transform: rotateY(180deg);
+	text-align: center;
+	padding: 3.0rem;
+}
+
+/*Style for index statement*/
+.statement {
+	grid-area: area-5;
+	min-height: 15vh;
+	background-color: #FF7F50;
+}
+
+.statement p {
+	text-indent: 5%;
+	line-height: 2;
+}
+
+/*my-research page flip boxes*/
+.my-research-flipbox-container {
+	flex-direction: column;
+	display: block;
+	/*flex: 1;*/
+	margin: 5px;
+	width: auto;
+	height: auto;
+}
+
+.my-research-flip-box {
+	height: 32.0rem;
+	width: auto;
+	border: 2px solid white;
+	perspective: 1000px;
+}
+
+.my-research-flip-box-front {
+	background-color: #FFFFFF;
+	color: black;
+}
+
+.my-research-flip-box-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	/*text-align: center;*/
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+.my-research-flip-box-front img {
+	height: 100%;
+	width: 100%;
+	border: 1px solid gray;
+}
+
+.my-research-flip-box:hover .my-research-flip-box-inner {
+	transform: rotateY(180deg);
+}
+
+.my-research-flip-box-front, .my-research-flip-box-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.my-research-flip-box-back {
+	background-color: #FFFFFF;
+	transform: rotateY(180deg);
+	padding: 10px;
+	
+	/*Make writing smaller to fit in sm-mobile devices*/
+	font-size: 0.8rem;
+}
+
+/*-------------------------------------------------*/
+/*RESPONSIVE CSS*/
+/*THUMB RULE: Mobile First
+  Use min-width to detect device screen size.
+  min-width: 768px means that "when viewport is 768px or larger (Tablet or PC), set these styles; 
+             otherwise (Mobile) set above styles"  
+*/
+@media screen and (min-width: 768px) {
+	
+   /*Make Horizontal nav visible*/
+   .horizontal-nav {
+	   display: block;
+	   
+	   	background-color: #DAF7A6; 
+		padding: 10px 10px 10px 10px;
+   }
+   
+   .horizontal-nav ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+	}
+
+	.horizontal-nav ul li {
+		display: inline-block;
+		font-family: 'Oswald', sans-serif;
+		font-size: 1.0em;
+	}
+
+	.horizontal-nav ul li a {
+		display: block;
+		color: black;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;	
+	}
+
+	.horizontal-nav ul li:hover:not(.active) {
+		background-color: green;
+	}
+	
+	/*Change layout to big screen*/
+	main {	
+	/*use CSS grid*/
+	display: grid;
+	grid-template-areas: "area-1 area-1"
+						"area-2 area-3"
+						"area-4 area-4"
+						"area-5 area-5";
+						
+	grid-template-columns: 1fr 1fr;
+	}
+	
+	.bio {
+	/*Grid display for layout*/
+	display: grid;
+	grid-template-areas: "bio-1 bio-2 bio-2"
+						"bio-1 bio-2 bio-2";
+	}
+	
+	/*Flip container on home page*/
+	.flip-container {
+		flex-direction: row;
+		display: inline-block;
+		width: 31%;
+	}
+	
+	.flip-box-front img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.flip-box-front h4 {
+		display: block;
+		font-size: 1.0em;
+	}
+	
+	.flip-box, .flip-box-front, .flip-box-back {
+		width: 100%;
+		height: 180px;
+	}
+	
+}
+
+	/*For tablet screen*/
+@media screen and (width: 768px) {
+	
+	/*My research box size*/
+	.my-research-flip-box {
+	height: 40.0rem;
+	}
+}
+
